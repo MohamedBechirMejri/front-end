@@ -1,0 +1,10 @@
+.left-menu {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}

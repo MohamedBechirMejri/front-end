@@ -4,7 +4,7 @@ import Nav from "./Components/Nav";
 function App() {
   return (
     <div className="App">
-      <Nav css="left-menu d-flex" />
+      <Nav Css="left-menu d-flex" />
     </div>
   );
 }
