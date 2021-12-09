@@ -1,7 +1,7 @@
 import { Component } from "react/cjs/react.production.min";
 import SVG from "./SubComponents/SVG";
 
-class Nav extends Component {
+class Menu extends Component {
   render() {
     return (
       <nav className={this.props.Css + "nav flex-column .navbar-expand "}>
@@ -62,4 +62,4 @@ class Nav extends Component {
     );
   }
 }
-export default Nav;
+export default Menu;
