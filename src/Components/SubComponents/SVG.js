@@ -8,7 +8,7 @@ class SVG extends Component {
         width="1.5rem"
         height="1.5rem"
         fill="currentColor"
-        class={this.props.Class}
+        className={this.props.Class}
         viewBox="0 0 16 16"
       >
         <path d={this.props.D} />
