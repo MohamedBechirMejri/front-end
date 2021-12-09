@@ -3,17 +3,27 @@ import { Component } from "react/cjs/react.production.min";
 class Nav extends Component {
   render() {
     return (
-      <nav className={this.props.Css}>
+      <nav className={this.props.Css + "nav flex-column .navbar-expand "}>
         {/* hardcode stuff for now */}
 
         <div className="nav-top-items">
-          <a href="/dashboard">Dashboard</a>
-          <a href="/tournaments">Tournaments</a>
-          <a href="/teams">Teams</a>
+          <a className="nav-link" href="/dashboard">
+            Dashboard
+          </a>
+          <a className="nav-link" href="/tournaments">
+            Tournaments
+          </a>
+          <a className="nav-link" href="/teams">
+            Teams
+          </a>
         </div>
         <div className="nav-bottom-items">
-          <a href="/faq">FAQ</a>
-          <a href="/contact">Contact Us</a>
+          <a className="nav-link" href="/faq">
+            FAQ
+          </a>
+          <a className="nav-link" href="/contact">
+            Contact Us
+          </a>
         </div>
       </nav>
     );

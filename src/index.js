@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import "./Styles/leftMenu.scss";
+// eslint-disable-next-line no-unused-vars
+import bootstrap from 'bootstrap'
 
 ReactDOM.render(
   <React.StrictMode>

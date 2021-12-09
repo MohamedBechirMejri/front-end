@@ -3,7 +3,7 @@ import Nav from "./Components/Nav";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container-fluid">
       <Nav Css="left-menu d-flex" />
     </div>
   );
