@@ -8,11 +8,6 @@
   padding-top: 2em;
   padding-bottom: 3em;
 
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%,-50%);
-
   button {
     border-radius: 0.5em;
     border-color: #131820;
@@ -32,7 +27,7 @@
       transform: scale(0.95);
     }
     &:hover {
-        box-shadow: 0 0 0 0.125em ;
+      box-shadow: 0 0 0 0.125em;
     }
   }
 
@@ -154,4 +149,17 @@ footer {
   align-items: stretch;
   justify-content: center;
   min-height: 100vh;
+}
+.hidden {
+  display: none !important;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
