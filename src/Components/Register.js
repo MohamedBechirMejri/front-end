@@ -64,12 +64,6 @@ class Register extends Component {
             Type="password"
             OnChange
           />
-         {/*  <Input
-            Name="password-confirm"
-            Placeholder="Confirm Password"
-            Type="password"
-            OnChange
-          /> */}
           <Input
             Name="terms"
             Placeholder="You agree to our Terms"
