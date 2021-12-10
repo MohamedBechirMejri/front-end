@@ -26,7 +26,7 @@ class Footer extends Component {
         </div>
         <div className="right-foot">
           <a href="" target="_blank">
-            © iChala MBM Kimo Gotella 2021
+            © FightMe.tn 2021
           </a>
           <a href="" target="_blank">
             Terms
