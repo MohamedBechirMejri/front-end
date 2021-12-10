@@ -10,7 +10,7 @@ function App() {
       {/*   <Menu Css="left-menu d-flex" /> */}
       {/*  <Header /> */}
       <Register />
-      <Footer />
+          <Footer />
     </div>
   );
 }

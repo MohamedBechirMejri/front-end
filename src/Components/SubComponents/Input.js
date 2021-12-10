@@ -7,7 +7,7 @@ class Input extends Component {
           this.props.Type === "checkbox" ? "label-checkbox" : "label-input"
         }
       >
-        <label htmlFor={this.props.Name}>{this.props.Placeholder}:</label>
+        <label htmlFor={this.props.Name}>{this.props.Placeholder}</label>
         <input
           id={this.props.Name}
           onChange={this.props.OnChange}

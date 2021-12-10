@@ -2,6 +2,7 @@ import { Component } from "react";
 import "../Styles/register.scss";
 import Input from "./SubComponents/Input";
 import Button from "./SubComponents/Button";
+// import Footer from "./Footer";
 class Register extends Component {
   render() {
     return (
@@ -56,16 +57,11 @@ class Register extends Component {
             Type="password"
             OnChange
           />
-          <Input Name="age" Placeholder="Age" Type="checkbox" OnChange />
-          <Input Name="terms" Placeholder="Terms" Type="checkbox" OnChange />
-          <Input
-            Name="kip"
-            Placeholder="Kimo is Pedo"
-            Type="checkbox"
-            OnChange
-          />
+          <Input Name="terms" Placeholder="You agree to our Terms" Type="checkbox" OnChange />
+
           <Button ButtonName="Join Now" OnClick />
         </form>
+        {/*   <Footer/> */}
       </div>
     );
   }
