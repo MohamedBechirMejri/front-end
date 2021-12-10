@@ -1,4 +1,5 @@
 import { Component } from "react";
+import "../Styles/register.scss";
 import Input from "./SubComponents/Input";
 import Button from "./SubComponents/Button";
 class Register extends Component {
@@ -7,10 +8,31 @@ class Register extends Component {
       <div className="register">
         <h2>Create a new account</h2>
         <div className="oauth-buttons">
-          <Button ButtonName="continue with Discord" OnClick />
-          <Button ButtonName="continue with Google" OnClick />
-          <Button ButtonName="continue with Facebook" OnClick />
-          <Button ButtonName="continue with Twitter" OnClick />
+          <Button
+            ButtonName="continue with Discord"
+            OnClick
+            ClassName="discord-button"
+            Icon="bi-discord"
+          />
+
+          <Button
+            ButtonName="continue with Google"
+            OnClick
+            ClassName="google-button"
+            Icon="bi-google"
+          />
+          <Button
+            ButtonName="continue with Facebook"
+            OnClick
+            ClassName="facebook-button"
+            Icon="bi-facebook"
+          />
+          <Button
+            ButtonName="continue with Twitter"
+            OnClick
+            ClassName="twitter-button"
+            Icon="bi-twitter"
+          />
         </div>
         <div className="or">
           <hr />

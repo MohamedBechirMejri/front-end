@@ -2,7 +2,7 @@ import { Component } from "react/cjs/react.production.min";
 class Input extends Component {
   render() {
     return (
-      <div>
+      <div className="label-input">
         <label htmlFor={this.props.Name}>{this.props.Placeholder}:</label>
         <input
           id={this.props.Name}

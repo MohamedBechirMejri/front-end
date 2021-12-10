@@ -1,0 +1,58 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  gap: 1em;
+  button {
+    border-radius: 0.5em;
+    border-color: white;
+    border-style: solid;
+    padding: 0.25em;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    background-color: green;
+    text-transform: uppercase;
+  }
+  .oauth-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5em;
+    width: 21em;
+
+    .discord-button {
+      background-color: #5865f2;
+    }
+    .google-button {
+      background-color: #ea4335;
+    }
+    .facebook-button {
+      background-color: #1877f2;
+    }
+    .twitter-button {
+      background-color: #1da1f2;
+    }
+  }
+  .or {
+    display: flex;
+    width: 70%;
+    gap: 1em;
+
+    hr {
+      width: -webkit-fill-available;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    .label-input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
