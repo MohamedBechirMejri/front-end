@@ -134,6 +134,15 @@
         }
       }
     }
+    p {
+        a {
+            text-decoration: none;
+            color: crimson;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
   }
 }
 

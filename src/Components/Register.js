@@ -70,8 +70,10 @@ class Register extends Component {
             Type="checkbox"
             OnChange
           />
-
-          <Button ButtonName="Join Now" OnClick />
+          <Button ButtonName="Join Now" OnClick />{" "}
+          <p>
+            Already have an account ? <a href="/login">Login</a> instead!
+          </p>
         </form>
       </div>
     );
