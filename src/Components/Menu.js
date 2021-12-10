@@ -1,6 +1,6 @@
 import { Component } from "react/cjs/react.production.min";
 import SVG from "./SubComponents/SVG";
-
+import "../Styles/leftMenu.scss";
 class Menu extends Component {
   render() {
     return (

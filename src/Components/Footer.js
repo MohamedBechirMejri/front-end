@@ -1,5 +1,5 @@
 import { Component } from "react/cjs/react.production.min";
-
+import "../Styles/footer.scss";
 class Footer extends Component {
   render() {
     return (

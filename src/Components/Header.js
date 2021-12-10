@@ -1,5 +1,5 @@
 import { Component } from "react/cjs/react.production.min";
-
+import "../Styles/header.scss";
 class Header extends Component {
   render() {
     return (
