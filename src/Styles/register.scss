@@ -5,6 +5,7 @@
   height: 100%;
   justify-content: center;
   gap: 1em;
+
   button {
     border-radius: 0.5em;
     border-color: white;
@@ -16,6 +17,7 @@
     background-color: green;
     text-transform: uppercase;
   }
+
   .oauth-buttons {
     display: flex;
     flex-direction: column;
@@ -26,16 +28,20 @@
     .discord-button {
       background-color: #5865f2;
     }
+
     .google-button {
       background-color: #ea4335;
     }
+
     .facebook-button {
       background-color: #1877f2;
     }
+
     .twitter-button {
       background-color: #1da1f2;
     }
   }
+
   .or {
     display: flex;
     width: 70%;
@@ -45,14 +51,39 @@
       width: -webkit-fill-available;
     }
   }
+
   form {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    margin-bottom: 2em;
+
     .label-input {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+
+      input {
+        border-width: thin;
+        border-color: black;
+        border-radius: 0.25em;
+        font-size: larger;
+        outline: none;
+        transition: all 300ms;
+
+        &::placeholder {
+          text-align: center;
+        }
+
+        &:hover {
+          box-shadow: 0 0 0 0.05em;
+        }
+      }
     }
   }
+}
+footer {
+  position: absolute;
+  justify-content: space-around;
+  padding: 0.25em;
 }
