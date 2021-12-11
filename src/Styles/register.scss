@@ -31,29 +31,7 @@
     }
   }
 
-  .oauth-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5em;
-    width: 21em;
 
-    .discord-button {
-      background-color: #5865f2;
-    }
-
-    .google-button {
-      background-color: #ea4335;
-    }
-
-    .facebook-button {
-      background-color: #1877f2;
-    }
-
-    .twitter-button {
-      background-color: #1da1f2;
-    }
-  }
 
   .or {
     display: flex;

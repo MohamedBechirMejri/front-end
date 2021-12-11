@@ -2,6 +2,8 @@ import { Component } from "react";
 import "../Styles/register.scss";
 import Input from "./SubComponents/Input";
 import Button from "./SubComponents/Button";
+import OAuthButtons from "./Register-Login/OAuthButtons";
+import Or from "./Register-Login/Or";
 
 class Register extends Component {
   constructor(props) {
@@ -21,38 +23,8 @@ class Register extends Component {
       <div className="register">
         <h1>FightMe.tn</h1>
         <h2>Create a new account</h2>
-        <div className="oauth-buttons">
-          <Button
-            ButtonName="continue with Discord"
-            OnClick
-            ClassName="discord-button"
-            Icon="bi-discord"
-          />
-
-          <Button
-            ButtonName="continue with Google"
-            OnClick
-            ClassName="google-button"
-            Icon="bi-google"
-          />
-          <Button
-            ButtonName="continue with Facebook"
-            OnClick
-            ClassName="facebook-button"
-            Icon="bi-facebook"
-          />
-          <Button
-            ButtonName="continue with Twitter"
-            OnClick
-            ClassName="twitter-button"
-            Icon="bi-twitter"
-          />
-        </div>
-        <div className="or">
-          <hr />
-          <h3>OR</h3>
-          <hr />
-        </div>
+        <OAuthButtons />
+        <Or />
         <h2>Subscribe with email</h2>
         <Button ButtonName="continue with  Email" OnClick={this.showForm} />
         <form className={this.state.isFormHidden && "hidden"}>
