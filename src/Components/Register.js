@@ -11,10 +11,13 @@ class Register extends Component {
     this.showForm = this.showForm.bind(this);
     this.changeUsernameInput = this.changeUsernameInput.bind(this);
     this.changeEmailInput = this.changeEmailInput.bind(this);
+    this.changePasswordInput = this.changePasswordInput.bind(this);
 
     this.state = {
       isFormHidden: true,
-      usernameInput: ''
+      usernameInput: '',
+      emailInput: '',
+      passwordInput: ''
     };
   }
 
@@ -34,6 +37,11 @@ class Register extends Component {
       emailInput: e.target.value
     });
   }
+  changePasswordInput(e) {
+    this.setState({
+      passwordInput: e.target.value
+    });
+  }
 
   render() {
     return (
@@ -51,7 +59,7 @@ class Register extends Component {
             Name="password"
             Placeholder="Password"
             Type="password"
-            OnChange
+            OnChange={this.changePasswordInput}
           />
           <Input
             Name="terms"
@@ -59,7 +67,7 @@ class Register extends Component {
             Type="checkbox"
             OnChange
           />
-          <Button ButtonName="Join Now" OnClick />{" "}
+          <Button ButtonName="Join Now" OnClick />
           <p>
             Already have an account ? <a href="/login">Login</a> instead!
           </p>
