@@ -9,15 +9,32 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.showForm = this.showForm.bind(this);
+    this.changeUsernameInput = this.changeUsernameInput.bind(this);
+    this.changeEmailInput = this.changeEmailInput.bind(this);
+
     this.state = {
       isFormHidden: true,
+      usernameInput: ''
     };
   }
+
   showForm() {
     this.setState({
       isFormHidden: false,
     });
   }
+
+  changeUsernameInput(e) {
+    this.setState({
+      usernameInput: e.target.value
+    });
+  }
+  changeEmailInput(e) {
+    this.setState({
+      emailInput: e.target.value
+    });
+  }
+
   render() {
     return (
       <div className="register">
@@ -28,8 +45,8 @@ class Register extends Component {
         <h2>Subscribe with email</h2>
         <Button ButtonName="continue with  Email" OnClick={this.showForm} />
         <form className={this.state.isFormHidden && "hidden"}>
-          <Input Name="username" Placeholder="Username" Type="text" OnChange />
-          <Input Name="email" Placeholder="Email" Type="email" OnChange />
+          <Input Name="username" Placeholder="Username" Type="text" OnChange={this.changeUsernameInput} />
+          <Input Name="email" Placeholder="Email" Type="email" OnChange={this.changeEmailInput} />
           <Input
             Name="password"
             Placeholder="Password"
