@@ -8,26 +8,26 @@ class OAuthButtons extends Component {
       <div className="oauth-buttons">
         <Button
           ButtonName="continue with Discord"
-          OnClick
+          OnClick={() => console.log("hi")}
           ClassName="discord-button"
           Icon="bi-discord"
         />
 
         <Button
           ButtonName="continue with Google"
-          OnClick
+          OnClick={() => console.log("hi")}
           ClassName="google-button"
           Icon="bi-google"
         />
         <Button
           ButtonName="continue with Facebook"
-          OnClick
+          OnClick={() => console.log("hi")}
           ClassName="facebook-button"
           Icon="bi-facebook"
         />
         <Button
           ButtonName="continue with Twitter"
-          OnClick
+          OnClick={() => console.log("hi")}
           ClassName="twitter-button"
           Icon="bi-twitter"
         />
