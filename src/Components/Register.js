@@ -15,9 +15,9 @@ class Register extends Component {
 
     this.state = {
       isFormHidden: true,
-      usernameInput: '',
-      emailInput: '',
-      passwordInput: ''
+      usernameInput: "",
+      emailInput: "",
+      passwordInput: "",
     };
   }
 
@@ -29,17 +29,17 @@ class Register extends Component {
 
   changeUsernameInput(e) {
     this.setState({
-      usernameInput: e.target.value
+      usernameInput: e.target.value,
     });
   }
   changeEmailInput(e) {
     this.setState({
-      emailInput: e.target.value
+      emailInput: e.target.value,
     });
   }
   changePasswordInput(e) {
     this.setState({
-      passwordInput: e.target.value
+      passwordInput: e.target.value,
     });
   }
 
@@ -51,10 +51,24 @@ class Register extends Component {
         <OAuthButtons />
         <Or />
         <h2>Subscribe with email</h2>
-        <Button ButtonName="continue with  Email" OnClick={this.showForm} className={!this.state.isFormHidden && "hidden"}/>
-        <form className={this.state.isFormHidden && "hidden"}>
-          <Input Name="username" Placeholder="Username" Type="text" OnChange={this.changeUsernameInput} />
-          <Input Name="email" Placeholder="Email" Type="email" OnChange={this.changeEmailInput} />
+        <Button
+          ButtonName="continue with  Email"
+          OnClick={this.showForm}
+          ClassName={!this.state.isFormHidden ? "hidden" : ""}
+        />
+        <form className={this.state.isFormHidden ? "hidden" : ""}>
+          <Input
+            Name="username"
+            Placeholder="Username"
+            Type="text"
+            OnChange={this.changeUsernameInput}
+          />
+          <Input
+            Name="email"
+            Placeholder="Email"
+            Type="email"
+            OnChange={this.changeEmailInput}
+          />
           <Input
             Name="password"
             Placeholder="Password"
@@ -65,9 +79,8 @@ class Register extends Component {
             Name="terms"
             Placeholder="You agree to our Terms"
             Type="checkbox"
-            OnChange
           />
-          <Button ButtonName="Join Now" OnClick />
+          <Button ButtonName="Join Now" OnClick={() => console.log("hi")} />
           <p>
             Already have an account ? <a href="/login">Login</a> instead!
           </p>
