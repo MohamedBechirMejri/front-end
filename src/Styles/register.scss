@@ -31,8 +31,6 @@
     }
   }
 
-
-
   .or {
     display: flex;
     width: 70%;
@@ -113,13 +111,15 @@
       }
     }
     p {
-        a {
-            text-decoration: none;
-            color: crimson;
-            &:hover {
-                text-decoration: underline;
-            }
+      text-align: center;
+      a {
+        text-decoration: none;
+        color: crimson;
+
+        &:hover {
+          text-decoration: underline;
         }
+      }
     }
   }
 }
@@ -147,6 +147,6 @@ footer {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
