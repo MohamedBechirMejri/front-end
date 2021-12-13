@@ -16,7 +16,24 @@ footer {
     a {
       color: gray;
       &:hover {
-        color: blue; // TODO: give each icon own color
+        .bi-discord {
+          color: #5865f2;
+        }
+        .bi-twitch {
+          color: #9146FF;
+        }
+        .bi-youtube {
+          color: #FF0000;
+        }
+        .bi-twitter {
+          color: #1da1f2;
+        }
+        .bi-instagram {
+          color: #C13584;
+        }
+        .bi-facebook {
+          color: #1877f2;
+        }
       }
     }
   }
