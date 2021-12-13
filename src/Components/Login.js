@@ -10,23 +10,17 @@ class Login extends Component {
   constructor(props) {
     super(props);
 
-    this.changeUsernameInput = this.changeUsernameInput.bind(this);
     this.changeEmailInput = this.changeEmailInput.bind(this);
     this.changePasswordInput = this.changePasswordInput.bind(this);
     this.submitForm = this.submitForm.bind(this);
 
     this.state = {
-      usernameInput: "",
       emailInput: "",
       passwordInput: "",
+      serverMessage: "",
     };
   }
 
-  changeUsernameInput(e) {
-    this.setState({
-      usernameInput: e.target.value,
-    });
-  }
   changeEmailInput(e) {
     this.setState({
       emailInput: e.target.value,
@@ -39,15 +33,13 @@ class Login extends Component {
   }
   submitForm(e) {
     const data = JSON.stringify({
-      username: this.state.usernameInput,
       email: this.state.emailInput,
       password: this.state.passwordInput,
-      serverMessage: "",
     });
 
     const config = {
       method: "post",
-      url: "https://aqueous-falls-70675.herokuapp.com/api/auth/register",
+      url: "https://aqueous-falls-70675.herokuapp.com/api/auth/login",
       headers: {
         "Content-Type": "application/json",
       },
@@ -56,9 +48,11 @@ class Login extends Component {
 
     axios(config)
       .then((res) => {
+        console.log(res);
         this.setState({
-          serverMessage: res.data.message,
+          serverMessage: "", //res.data.message,
           // TODO: show message on error
+          // TODO: redirect to /protected
         });
       })
       .catch((err) => {
