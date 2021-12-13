@@ -20,6 +20,7 @@ class Register extends Component {
       usernameInput: "",
       emailInput: "",
       passwordInput: "",
+      serverMessage: "",
     };
   }
 
@@ -49,7 +50,6 @@ class Register extends Component {
       username: this.state.usernameInput,
       email: this.state.emailInput,
       password: this.state.passwordInput,
-      serverMessage: "",
     });
 
     const config = {
