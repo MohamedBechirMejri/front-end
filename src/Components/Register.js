@@ -4,6 +4,7 @@ import Input from "./SubComponents/Input";
 import Button from "./SubComponents/Button";
 import OAuthButtons from "./Register-Login/OAuthButtons";
 import Or from "./Register-Login/Or";
+import axios from "axios";
 
 class Register extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Register extends Component {
     this.changeUsernameInput = this.changeUsernameInput.bind(this);
     this.changeEmailInput = this.changeEmailInput.bind(this);
     this.changePasswordInput = this.changePasswordInput.bind(this);
+    this.submitForm = this.submitForm.bind(this);
 
     this.state = {
       isFormHidden: true,
@@ -41,6 +43,32 @@ class Register extends Component {
     this.setState({
       passwordInput: e.target.value,
     });
+  }
+  submitForm(e) {
+    const data = JSON.stringify({
+      username: this.state.usernameInput,
+      email: this.state.emailInput,
+      password: this.state.passwordInput,
+    });
+
+    const config = {
+      method: "post",
+      url: "https://aqueous-falls-70675.herokuapp.com/api/auth/register",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then((res) => {
+        console.log(JSON.stringify(res.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    e.preventDefault();
   }
 
   render() {
@@ -80,7 +108,7 @@ class Register extends Component {
             Placeholder="You agree to our Terms"
             Type="checkbox"
           />
-          <Button ButtonName="Join Now" OnClick={() => console.log("hi")} />
+          <Button ButtonName="Join Now" OnClick={this.submitForm} />
           <p>
             Already have an account ? <a href="/login">Login</a> instead!
           </p>
