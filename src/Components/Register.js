@@ -65,6 +65,7 @@ class Register extends Component {
       .then((res) => {
         this.setState({
           serverMessage: res.data.message,
+          // TODO: show message on error
         });
       })
       .catch((err) => {
