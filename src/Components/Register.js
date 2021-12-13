@@ -49,6 +49,7 @@ class Register extends Component {
       username: this.state.usernameInput,
       email: this.state.emailInput,
       password: this.state.passwordInput,
+      serverMessage: "",
     });
 
     const config = {
@@ -62,7 +63,9 @@ class Register extends Component {
 
     axios(config)
       .then((res) => {
-        console.log(JSON.stringify(res.data));
+        this.setState({
+          serverMessage: res.data.message,
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -109,6 +112,7 @@ class Register extends Component {
             Type="checkbox"
           />
           <Button ButtonName="Join Now" OnClick={this.submitForm} />
+          <p className="message">{this.state.serverMessage}</p>
           <p>
             Already have an account ? <a href="/login">Login</a> instead!
           </p>

@@ -111,6 +111,11 @@
       }
     }
     p {
+      &.message {
+        color: #00ffad;
+        background: #00a55d47;
+        border-radius: 0.5em;
+      }
       text-align: center;
       a {
         text-decoration: none;
