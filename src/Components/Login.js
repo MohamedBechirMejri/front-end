@@ -3,15 +3,14 @@ import OAuthButtons from "./Register-Login/OAuthButtons";
 import Or from "./Register-Login/Or";
 import Input from "./SubComponents/Input";
 import Button from "./SubComponents/Button";
+import "../Styles/login.scss";
 
 class Login extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            
-        }
-    }
+    this.state = {};
+  }
   render() {
     return (
       <div className="login">
