@@ -65,6 +65,7 @@ class Register extends Component {
       .then((res) => {
         this.setState({
           serverMessage: res.data.message,
+          // TODO: redirect to verification page
           // TODO: show message on error
         });
       })
