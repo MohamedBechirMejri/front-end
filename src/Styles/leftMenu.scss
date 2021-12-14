@@ -14,7 +14,7 @@
   transition: all 300ms;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
-  box-shadow: 0 0 20px 100em #00000000;
+  box-shadow: 0 0 20px 100vw #00000000;
   z-index: 1000;
   .homelink {
     position: absolute;
@@ -30,7 +30,7 @@
   }
   &:hover {
     width: 10em;
-    box-shadow: 0 0 20px 100em #000000ab;
+    box-shadow: 0 0 20px 100vw #000000ab;
     a {
       span {
         display: inline;
