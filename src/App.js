@@ -1,17 +1,20 @@
 import "./App.css";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
-// import Header from "./Components/Header";
-// import Menu from "./Components/Menu";
-// import Register from "./Components/Register";
+import Header from "./Components/Header";
+import Menu from "./Components/Menu";
+import Register from "./Components/Register";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      {/*   <Menu Css="left-menu d-flex" /> */}
-      {/*  <Header /> */}
-      {/* <Register /> */}
-      <Login/>
+      <Menu Css="left-menu d-flex" />
+      <Header />
+      <Routes>
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Routes>
       <Footer />
     </div>
   );
