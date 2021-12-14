@@ -5,7 +5,7 @@ import "../../Styles/oauthButtons.scss";
 class OAuthButtons extends Component {
   render() {
     return (
-      <div className="oauth-buttons">
+      <div className={"oauth-buttons " + (this.props.Hidden ? "hidden" : "")}>
         <Button
           ButtonName="continue with Discord"
           OnClick={() => console.log("hi")}
