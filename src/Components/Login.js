@@ -4,26 +4,26 @@ import Or from "./Register-Login/Or";
 import Input from "./SubComponents/Input";
 import Button from "./SubComponents/Button";
 import "../Styles/login.scss";
-import { axios } from "axios";
+import axios from "axios";
 
 class Login extends Component {
   constructor(props) {
     super(props);
 
-    this.changeEmailInput = this.changeEmailInput.bind(this);
+    this.changeUsernameInput = this.changeUsernameInput.bind(this);
     this.changePasswordInput = this.changePasswordInput.bind(this);
     this.submitForm = this.submitForm.bind(this);
 
     this.state = {
-      emailInput: "",
+      usernameInput: "",
       passwordInput: "",
       serverMessage: "",
     };
   }
 
-  changeEmailInput(e) {
+  changeUsernameInput(e) {
     this.setState({
-      emailInput: e.target.value,
+      usernameInput: e.target.value,
     });
   }
   changePasswordInput(e) {
@@ -33,7 +33,7 @@ class Login extends Component {
   }
   submitForm(e) {
     const data = JSON.stringify({
-      email: this.state.emailInput,
+      username: this.state.usernameInput,
       password: this.state.passwordInput,
     });
 
@@ -69,10 +69,10 @@ class Login extends Component {
         <h3>your FightMe.tn account</h3>
         <form>
           <Input
-            Name="email"
-            Placeholder="Email"
-            Type="email"
-            OnChange={this.changeEmailInput}
+            Name="username"
+            Placeholder="Username"
+            Type="text"
+            OnChange={this.changeUsernameInput}
           />
           <Input
             Name="password"
