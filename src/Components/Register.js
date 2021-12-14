@@ -5,6 +5,7 @@ import Button from "./SubComponents/Button";
 import OAuthButtons from "./Register-Login/OAuthButtons";
 import Or from "./Register-Login/Or";
 import axios from "axios";
+import Verify from "./Verify";
 
 class Register extends Component {
   constructor(props) {
@@ -17,16 +18,19 @@ class Register extends Component {
 
     this.state = {
       isFormHidden: true,
+      isFormButtonHidden: false,
       usernameInput: "",
       emailInput: "",
       passwordInput: "",
       serverMessage: "",
+      isWaitingForVerification: false,
     };
   }
 
   showForm() {
     this.setState({
       isFormHidden: false,
+      isFormButtonHidden: true,
     });
   }
 
@@ -65,6 +69,8 @@ class Register extends Component {
       .then((res) => {
         this.setState({
           serverMessage: res.data.message,
+          isWaitingForVerification: true,
+          isFormHidden: true,
           // TODO: redirect to verification page
           // TODO: show message on error
         });
@@ -87,7 +93,7 @@ class Register extends Component {
         <Button
           ButtonName="continue with  Email"
           OnClick={this.showForm}
-          ClassName={!this.state.isFormHidden ? "hidden" : ""}
+          ClassName={this.state.isFormButtonHidden ? "hidden" : ""}
         />
         <form className={this.state.isFormHidden ? "hidden" : ""}>
           <Input
@@ -119,6 +125,7 @@ class Register extends Component {
             Already have an account ? <a href="/login">Login</a> instead!
           </p>
         </form>
+        <Verify Shown={this.state.isWaitingForVerification} />
       </div>
     );
   }
