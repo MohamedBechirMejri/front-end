@@ -1,0 +1,41 @@
+.home {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  i {
+      font-size: 4em;
+  }
+  button {
+    border-radius: 0.5em;
+    border-color: #131820;
+    border-style: solid;
+    padding: 0.25em;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    background-color: crimson;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    transition: all 200ms;
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 0.125em;
+    }
+  }
+  .login-register-buttons {
+      display: flex;
+      gap: 1em;
+  }
+  a {
+      text-decoration: none;
+  }
+}

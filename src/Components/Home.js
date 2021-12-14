@@ -1,6 +1,7 @@
 import Button from "./SubComponents/Button";
 import { Link } from "react-router-dom";
 import { Component } from "react/cjs/react.production.min";
+import "../Styles/home.scss";
 
 class Home extends Component {
   render() {
