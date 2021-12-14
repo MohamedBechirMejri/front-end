@@ -5,7 +5,7 @@ import Header from "./Components/Header";
 import Menu from "./Components/Menu";
 import Register from "./Components/Register";
 import { Routes, Route } from "react-router-dom";
-import Home from './Components/Home';
+import Home from "./Components/Home";
 
 function App() {
   return (
