@@ -48,13 +48,12 @@ class Login extends Component {
 
     axios(config)
       .then((res) => {
-        console.log(res);
         this.setState({
           serverMessage: "", //res.data.message,
           // TODO: show message on error
-          // TODO: redirect to /protected
-          // TODO: fix error
         });
+        this.props.SetToken(res.data.token);
+        this.props.GrabUser();
       })
       .catch((err) => {
         console.log(err);
