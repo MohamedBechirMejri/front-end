@@ -23,7 +23,7 @@ class Register extends Component {
       emailInput: "",
       passwordInput: "",
       serverMessage: "",
-      isWaitingForVerification: false,
+      isStillResgistering: true,
     };
   }
 
@@ -70,7 +70,7 @@ class Register extends Component {
         console.log(res);
         this.setState({
           serverMessage: res.data.message,
-          isWaitingForVerification: true,
+          isStillResgistering: false,
           isFormHidden: true,
 
           // TODO: show message on error
@@ -84,17 +84,13 @@ class Register extends Component {
   }
 
   render() {
-    return (
+    return this.state.isStillResgistering ? (
       <div className="register">
         <h1>FightMe.tn</h1>
-        <h2 className={this.state.isWaitingForVerification ? "hidden" : ""}>
-          Create a new account
-        </h2>
-        <OAuthButtons Hidden={this.state.isWaitingForVerification} />
-        <Or Hidden={this.state.isWaitingForVerification} />
-        <h2 className={this.state.isWaitingForVerification ? "hidden" : ""}>
-          Subscribe with email
-        </h2>
+        <h2>Create a new account</h2>
+        <OAuthButtons />
+        <Or />
+        <h2>Subscribe with email</h2>
         <Button
           ButtonName="continue with  Email"
           OnClick={this.showForm}
@@ -130,12 +126,12 @@ class Register extends Component {
             Already have an account ? <a href="/login">Login</a> instead!
           </p>
         </form>
-        <Verify
-          Shown={this.state.isWaitingForVerification}
-          Username={this.state.usernameInput}
-          Email={this.state.emailInput}
-        />
       </div>
+    ) : (
+      <Verify
+        Username={this.state.usernameInput}
+        Email={this.state.emailInput}
+      />
     );
   }
 }

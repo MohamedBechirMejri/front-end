@@ -43,7 +43,7 @@ const Verify = (props) => {
   };
 
   return (
-    <div className={"verify " + (props.Shown ? "" : "hidden")}>
+    <div className={"verify"}>
       <h2>Enter the code we sent to your email</h2>
       <form>
         <Input
