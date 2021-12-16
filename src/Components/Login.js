@@ -6,6 +6,8 @@ import Button from "./SubComponents/Button";
 import "../Styles/login.scss";
 import axios from "axios";
 
+// TODO: Implement loading screen app wide after completely switching to hooks
+
 class Login extends Component {
   constructor(props) {
     super(props);
