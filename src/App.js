@@ -8,6 +8,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Components/Home";
 import { Component } from "react/cjs/react.production.min";
 import axios from "axios";
+import { Toaster } from "react-hot-toast";
 
 class App extends Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class App extends Component {
     const { user } = this.state;
     return (
       <div className="App">
+        <Toaster />
         {user && <Menu Css="left-menu d-flex" />}
         {user && <Header />}
 
@@ -112,7 +114,7 @@ class App extends Component {
             }
           />
         </Routes>
-       
+
         <Footer />
       </div>
     );
