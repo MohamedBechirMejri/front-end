@@ -71,9 +71,13 @@ class Register extends Component {
       loading: "Registering...",
       success: (res) => {
         this.setState({ isStillResgistering: false });
+        Loading.remove();
         return <b>{res.data.message}!</b>;
       },
-      error: (err) => console.log(err.response), // <b>{err.response.data.errors[0].msg}.</b>,
+      error: (err) => {
+        Loading.remove();
+        console.log(err.response);
+      }, // <b>{err.response.data.errors[0].msg}.</b>,
     });
     //TODO: implement this later after we streamline server code
     e.preventDefault();
