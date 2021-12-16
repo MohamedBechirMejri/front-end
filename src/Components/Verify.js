@@ -6,7 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Verify = (props) => {
+  const navigate = useNavigate();
+
   const [verificationInput, setVerificationInput] = useState(0);
+
   const changeVerificationInput = (e) => {
     setVerificationInput(e.target.value);
   };
@@ -30,7 +33,7 @@ const Verify = (props) => {
     axios(config)
       .then((res) => {
         console.log(res);
-        useNavigate()("/", { replace: true });
+        navigate("/login", { replace: true });
       })
       .catch((err) => {
         console.log(err);
