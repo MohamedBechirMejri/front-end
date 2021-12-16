@@ -11,18 +11,18 @@ class Verify extends Component {
     this.state = { verificationInput: "" };
   }
   changeVerificationInput(e) {
-    this.setState({ verificationInput: e.taeget.value });
+    this.setState({ verificationInput: e.target.value });
   }
   submitVerificationCode(e) {
     const data = JSON.stringify({
       username: this.props.Username,
       email: this.props.Email,
-      code: this.state.verificationInput,
+      veri_token: this.state.verificationInput,
     });
 
     const config = {
       method: "post",
-      url: "https://aqueous-falls-70675.herokuapp.com/api/auth/verify", // correct url later
+      url: "https://aqueous-falls-70675.herokuapp.com/api/auth/verifyemail", // correct url later
       headers: {
         "Content-Type": "application/json",
       },
@@ -31,11 +31,7 @@ class Verify extends Component {
 
     axios(config)
       .then((res) => {
-        this.setState({
-          serverMessage: res.data.message,
-          // TODO: redirect to login page
-          // TODO: show message on error
-        });
+        console.log(res);
       })
       .catch((err) => {
         console.log(err);
@@ -45,7 +41,7 @@ class Verify extends Component {
   }
   render() {
     return (
-      <div className={"verify " + (this.props.Shown ? '' : 'hidden')}>
+      <div className={"verify " + (this.props.Shown ? "" : "hidden")}>
         <h2>Enter the code we sent to your email</h2>
         <form>
           <Input
