@@ -8,6 +8,7 @@ class Verify extends Component {
   constructor(props) {
     super(props);
     this.changeVerificationInput = this.changeVerificationInput.bind(this);
+    this.submitVerificationCode = this.submitVerificationCode.bind(this);
     this.state = { verificationInput: "" };
   }
   changeVerificationInput(e) {
@@ -17,7 +18,7 @@ class Verify extends Component {
     const data = JSON.stringify({
       username: this.props.Username,
       email: this.props.Email,
-      veri_token: this.state.verificationInput,
+      ver_code: this.state.verificationInput,
     });
 
     const config = {
