@@ -6,7 +6,7 @@ import OAuthButtons from "./Register-Login/OAuthButtons";
 import Or from "./Register-Login/Or";
 import axios from "axios";
 import Verify from "./Verify";
-//import { Loading } from "notiflix";
+import { Loading } from "notiflix";
 import toast from "react-hot-toast";
 
 class Register extends Component {
@@ -52,7 +52,7 @@ class Register extends Component {
     });
   }
   async submitForm(e) {
-    //Loading.standard('One Sec...');
+    Loading.standard("One Sec...");
     const data = JSON.stringify({
       username: this.state.usernameInput,
       email: this.state.emailInput,
@@ -73,9 +73,9 @@ class Register extends Component {
         this.setState({ isStillResgistering: false });
         return <b>{res.data.message}!</b>;
       },
-      error: (err) => <b>{err.response.data.errors[0].msg}.</b>,
+      error: (err) => console.log(err.response), // <b>{err.response.data.errors[0].msg}.</b>,
     });
-
+    //TODO: implement this later after we streamline server code
     e.preventDefault();
   }
 
