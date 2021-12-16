@@ -48,6 +48,7 @@ class Login extends Component {
 
     axios(config)
       .then((res) => {
+        console.log(res);
         this.setState({
           serverMessage: "", //res.data.message,
           // TODO: show message on error
