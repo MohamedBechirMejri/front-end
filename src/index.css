@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
-
+* {
+  font-weight: lighter !important;
+  line-height: unset !important;
+}
 body {
   background-color: #131820;
   color: white;
@@ -11,6 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   font-family: "Open Sans" !important;
+
 }
 
 #root,
