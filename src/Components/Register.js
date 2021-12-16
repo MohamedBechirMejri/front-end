@@ -6,6 +6,8 @@ import OAuthButtons from "./Register-Login/OAuthButtons";
 import Or from "./Register-Login/Or";
 import axios from "axios";
 import Verify from "./Verify";
+//import { Loading } from "notiflix";
+import toast from "react-hot-toast";
 
 class Register extends Component {
   constructor(props) {
@@ -49,7 +51,8 @@ class Register extends Component {
       passwordInput: e.target.value,
     });
   }
-  submitForm(e) {
+  async submitForm(e) {
+    //Loading.standard('One Sec...');
     const data = JSON.stringify({
       username: this.state.usernameInput,
       email: this.state.emailInput,
@@ -64,21 +67,14 @@ class Register extends Component {
       },
       data: data,
     };
-
-    axios(config)
-      .then((res) => {
-        console.log(res);
-        this.setState({
-          serverMessage: res.data.message,
-          isStillResgistering: false,
-          isFormHidden: true,
-
-          // TODO: show message on error
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    toast.promise(axios(config), {
+      loading: "Registering...",
+      success: (res) => {
+        this.setState({ isStillResgistering: false });
+        return <b>{res.data.message}!</b>;
+      },
+      error: (err) => <b>{err.response.data.errors[0].msg}.</b>,
+    });
 
     e.preventDefault();
   }
