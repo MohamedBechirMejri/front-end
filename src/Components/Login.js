@@ -5,6 +5,7 @@ import Input from "./SubComponents/Input";
 import Button from "./SubComponents/Button";
 import "../Styles/login.scss";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 // TODO: Implement loading screen app wide after completely switching to hooks
 
@@ -19,7 +20,6 @@ class Login extends Component {
     this.state = {
       usernameInput: "",
       passwordInput: "",
-      serverMessage: "",
     };
   }
 
@@ -48,19 +48,15 @@ class Login extends Component {
       data: data,
     };
 
-    axios(config)
-      .then((res) => {
-        console.log(res);
-        this.setState({
-          serverMessage: "", //res.data.message,
-          // TODO: show message on error
-        });
+    toast.promise(axios(config), {
+      loading: "Registering...",
+      success: (res) => {
         this.props.SetToken(res.data.token);
         this.props.GrabUser();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        return <b>{res.data.message}!</b>;
+      },
+      error: (err) => console.log(err.response), // <b>{err.response.data.errors[0].msg}.</b>,
+    });
 
     e.preventDefault();
   }
