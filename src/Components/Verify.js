@@ -1,24 +1,21 @@
 import Button from "./SubComponents/Button";
-import { Component } from "react/cjs/react.production.min";
 import "../Styles/verify.scss";
 import Input from "./SubComponents/Input";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-class Verify extends Component {
-  constructor(props) {
-    super(props);
-    this.changeVerificationInput = this.changeVerificationInput.bind(this);
-    this.submitVerificationCode = this.submitVerificationCode.bind(this);
-    this.state = { verificationInput: "" };
-  }
-  changeVerificationInput(e) {
-    this.setState({ verificationInput: e.target.value });
-  }
-  submitVerificationCode(e) {
+const Verify = (props) => {
+  const [verificationInput, setVerificationInput] = useState(0);
+  const changeVerificationInput = (e) => {
+    setVerificationInput(e.target.value);
+  };
+
+  const submitVerificationCode = (e) => {
     const data = JSON.stringify({
-      username: this.props.Username,
-      email: this.props.Email,
-      ver_code: this.state.verificationInput,
+      username: props.Username,
+      email: props.Email,
+      ver_code: verificationInput,
     });
 
     const config = {
@@ -33,30 +30,30 @@ class Verify extends Component {
     axios(config)
       .then((res) => {
         console.log(res);
+        useNavigate()("/", { replace: true });
       })
       .catch((err) => {
         console.log(err);
       });
 
     e.preventDefault();
-  }
-  render() {
-    return (
-      <div className={"verify " + (this.props.Shown ? "" : "hidden")}>
-        <h2>Enter the code we sent to your email</h2>
-        <form>
-          <Input
-            Name="verification-code"
-            OnChange={this.changeVerificationInput}
-            Type="text"
-            Placeholder="Verification Code"
-            Class="verification-input"
-            required
-          />
-          <Button ButtonName="Submit" OnClick={this.submitVerificationCode} />
-        </form>
-      </div>
-    );
-  }
-}
+  };
+
+  return (
+    <div className={"verify " + (props.Shown ? "" : "hidden")}>
+      <h2>Enter the code we sent to your email</h2>
+      <form>
+        <Input
+          Name="verification-code"
+          OnChange={changeVerificationInput}
+          Type="text"
+          Placeholder="Verification Code"
+          Class="verification-input"
+          required
+        />
+        <Button ButtonName="Submit" OnClick={submitVerificationCode} />
+      </form>
+    </div>
+  );
+};
 export default Verify;
