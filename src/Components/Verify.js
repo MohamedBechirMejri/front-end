@@ -4,6 +4,7 @@ import Input from "./SubComponents/Input";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "../Styles/verify.scss";
 
 const Verify = (props) => {
   const navigate = useNavigate();
@@ -44,7 +45,8 @@ const Verify = (props) => {
 
   return (
     <div className={"verify"}>
-      <h2>Enter the code we sent to your email</h2>
+      <h1>Hey, {props.Username}!</h1>
+      <h2>Enter the code we sent to your email.</h2>
       <form>
         <Input
           Name="verification-code"
