@@ -1,7 +1,7 @@
 // import Button from "./SubComponents/Button";
 // import { Link } from "react-router-dom";
 import { Component } from "react/cjs/react.production.min";
-import "../Styles/home.scss";
+import "./Home/Styles/Home.scss";
 import Games from "./Home/Games";
 import Slider from "./Home/Slider";
 import Tournaments from "./Home/Tournaments";
