@@ -2,9 +2,9 @@ import SVG from "./SubComponents/SVG";
 import "../Styles/leftMenu.scss";
 import { Link } from "react-router-dom";
 
-const Menu = () => {
+const Menu = (props) => {
   return (
-    <nav className={this.props.Css + "nav flex-column .navbar-expand "}>
+    <nav className={props.Css + "nav flex-column .navbar-expand "}>
       {/* hardcode stuff for now */}
       <div className="logo">
         <SVG
