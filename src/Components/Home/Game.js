@@ -1,3 +1,5 @@
+import "./Styles/Game.scss";
+
 const Game = (props) => {
   return (
     <div
@@ -6,7 +8,7 @@ const Game = (props) => {
         backgroundImage: `url(${props.game.image})`,
       }}
     >
-      <h3>{props.game.title}</h3>
+      <h3 className="game-title">{props.game.title}</h3>
     </div>
   );
 };
