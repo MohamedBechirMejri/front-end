@@ -17,6 +17,7 @@ const Verify = (props) => {
 
   const submitVerificationCode = (e) => {
     const data = JSON.stringify({
+      id: props.Id,
       username: props.Username,
       email: props.Email,
       ver_code: verificationInput,
@@ -34,7 +35,7 @@ const Verify = (props) => {
     axios(config)
       .then((res) => {
         console.log(res);
-        navigate("/login", { replace: true });
+        navigate("/", { replace: true });
       })
       .catch((err) => {
         console.log(err);
