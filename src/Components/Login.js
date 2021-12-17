@@ -6,6 +6,8 @@ import Button from "./SubComponents/Button";
 import "../Styles/login.scss";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { Loading } from "notiflix";
+import Verify from "./Verify";
 
 // TODO: Implement loading screen app wide after completely switching to hooks
 
@@ -20,6 +22,8 @@ class Login extends Component {
     this.state = {
       usernameInput: "",
       passwordInput: "",
+      isVerified: true,
+      userData: {},
     };
   }
 
@@ -34,6 +38,7 @@ class Login extends Component {
     });
   }
   submitForm(e) {
+    Loading.standard("One Sec...");
     const data = JSON.stringify({
       username: this.state.usernameInput,
       password: this.state.passwordInput,
@@ -49,19 +54,31 @@ class Login extends Component {
     };
 
     toast.promise(axios(config), {
-      loading: "Registering...",
+      loading: "Logging you in...",
       success: (res) => {
+        Loading.remove();
         this.props.SetToken(res.data.token);
         this.props.GrabUser();
-        return <b>{res.data.message}!</b>;
+        return <b>{"Welcome" + res.data.user.username}!</b>;
       },
-      error: (err) => console.log(err.response), // <b>{err.response.data.errors[0].msg}.</b>,
+      error: (err) => {
+        if (err.response.status === 406) {
+          Loading.remove();
+          this.setState({
+            isVerified: false,
+            userData: err.response.data.user,
+          });
+
+          console.log(err.response);
+        }
+        return <b>{err.response.data.msg}.</b>;
+      },
     });
 
     e.preventDefault();
   }
   render() {
-    return (
+    return this.state.isVerified ? (
       <div className="login">
         <h1>Login With</h1>
         <h3>your FightMe.tn account</h3>
@@ -92,6 +109,12 @@ class Login extends Component {
         <Or />
         <OAuthButtons />
       </div>
+    ) : (
+      <Verify
+        Username={this.state.userData.username}
+        Email={this.state.userData.email}
+        Id={this.state.userData.id}
+      />
     );
   }
 }
