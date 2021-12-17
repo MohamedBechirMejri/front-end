@@ -5,6 +5,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../Styles/verify.scss";
+import { toast } from "react-hot-toast";
+import { Loading } from "notiflix";
 
 const Verify = (props) => {
   const navigate = useNavigate();
@@ -32,14 +34,18 @@ const Verify = (props) => {
       data: data,
     };
 
-    axios(config)
-      .then((res) => {
-        console.log(res);
-        navigate("/", { replace: true });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    toast.promise(axios(config), {
+      loading: "Verifying...",
+      success: () => {
+        Loading.remove();
+        props.flipIsVerified();
+        navigate("/login", { replace: true });
+        return <b>{"Verified! Please Login Again.."}!</b>;
+      },
+      error: (err) => {
+        return <b>{err.response.data.msg}.</b>;
+      },
+    });
 
     e.preventDefault();
   };
