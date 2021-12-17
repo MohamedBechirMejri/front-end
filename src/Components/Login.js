@@ -37,6 +37,11 @@ class Login extends Component {
       passwordInput: e.target.value,
     });
   }
+  flipIsVerified() {
+    this.setState({
+      isVerified: !this.state.isVerified,
+    });
+  }
   submitForm(e) {
     Loading.standard("One Sec...");
     const data = JSON.stringify({
@@ -114,6 +119,7 @@ class Login extends Component {
         Username={this.state.userData.username}
         Email={this.state.userData.email}
         Id={this.state.userData.id}
+        flipIsVerified={this.flipIsVerified.bind(this)}
       />
     );
   }
