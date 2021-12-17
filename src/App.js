@@ -56,7 +56,7 @@ class App extends Component {
     const { user } = this.state;
     return (
       <div className="App">
-        <Toaster position="bottom-right" reverseOrder={true} />
+        <Toaster position="top-right" reverseOrder={true} />
         {user && <Menu Css="left-menu d-flex" />}
         {user && <Header />}
 
