@@ -77,9 +77,9 @@ class Register extends Component {
       error: (err) => {
         Loading.remove();
         console.log(err.response);
-      }, // <b>{err.response.data.errors[0].msg}.</b>,
+       return <b>{err.response.data.errors[0].msg}.</b>
+      },
     });
-    //TODO: implement this later after we streamline server code
     e.preventDefault();
   }
 
