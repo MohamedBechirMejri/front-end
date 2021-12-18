@@ -1,9 +1,9 @@
 import "./App.css";
 import Toaster from "react-hot-toast";
-import Menu from "./Components/Menu";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Home from './Components/Home';
+import Menu from "../Old/src/Components/Menu";
+import Header from "../Old/src/Components/Header";
+import Footer from "../Old/src/Components/Footer";
+import Home from '../Old/src/Components/Home';
 
 // class App extends Component {
 //   constructor(props) {
