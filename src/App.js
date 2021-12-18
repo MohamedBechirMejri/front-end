@@ -2,7 +2,7 @@ import "./App.css";
 import Footer from "./Components/Footer";
 // import Login from "./Components/Login";
 import Header from "./Components/Header";
-import Menu from "./Components/Menu";
+// import Menu from "./Components/Menu";
 // import Register from "./Components/Register";
 // import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Components/Home";
@@ -56,7 +56,7 @@ class App extends Component {
     // const { user } = this.state;
     return (
       <div className="App">
-        <Menu Css="left-menu d-flex" />
+   
         <Header />
         <Home />
         <Footer />
