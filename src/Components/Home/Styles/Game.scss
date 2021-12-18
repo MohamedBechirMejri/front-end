@@ -1,0 +1,22 @@
+.game {
+  height: 15em;
+  width: 10em;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 1em;
+  flex-shrink: 0;
+  transition: all 300ms;
+    &:hover {
+        transform: scale(1.1);
+    }
+  .game-title {
+    font-size: 1em;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0.75em;
+    left: 0.25em;
+    margin: 0;
+    padding: 1em;
+  }
+}
