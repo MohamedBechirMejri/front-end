@@ -8,8 +8,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { Loading } from "notiflix";
 import Verify from "./Verify";
-
-// TODO: Implement loading screen app wide after completely switching to hooks
+ 
 
 class Login extends Component {
   constructor(props) {

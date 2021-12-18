@@ -1,8 +1,5 @@
-import { Component } from "react/cjs/react.production.min";
+const Dashboard = () => {
+  return <div></div>;
+};
 
-class Dashboard extends Component {
-  render() {
-    return <div></div>;
-  }
-}
 export default Dashboard;
