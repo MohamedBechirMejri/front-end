@@ -1,10 +1,10 @@
-import Games from "./Home/Games";
+// import Games from "./Home/Games";
 
 const Home = () => {
   return (
     <div className="home">
       {/* <Slider /> */}
-      <Games
+      {/* <Games
         Games={[
           {
             image:
@@ -47,7 +47,7 @@ const Home = () => {
             title: "League of Legends",
           },
         ]}
-      />
+      /> */}
       {/* Tournaments */}
     </div>
   );
