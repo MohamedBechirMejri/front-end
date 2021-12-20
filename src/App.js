@@ -1,12 +1,14 @@
+import { Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 import Login from "./Components/Header/Login";
-import Home from "./Components/Home";
+import Dashboard from "./Components/Dashboard";
 const App = () => {
   return (
     <div className="App">
       <Header />
-
-      <Home />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+      </Routes>
       <Login />
     </div>
   );

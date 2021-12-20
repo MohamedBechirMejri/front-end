@@ -1,8 +1,8 @@
 // import Games from "./Home/Games";
 
-const Home = () => {
+const Dashboard = () => {
   return (
-    <div className="home">
+    <div className="dashboard">
       {/* <Slider /> */}
       {/* <Games
         Games={[
@@ -52,4 +52,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default Dashboard;
