@@ -18,6 +18,7 @@
     "react-router-dom": "^6.1.1",
     "react-scripts": "^5.0.0",
     "sass": "^1.44.0",
+    "swiper": "^7.3.3",
     "uniqid": "^5.4.0"
   },
   "scripts": {
