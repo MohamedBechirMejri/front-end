@@ -1,26 +1,7 @@
-// import "../Styles/Header.scss";
-
-// const Header = () => {
-//   return (
-//     <header>
-//       <h1>FightMe.tn</h1>
-//       <div className="links">
-//         <a href="#">Dashboard</a>
-//         <a href="#">Tournaments</a>
-//         <a href="#">Teams</a>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
-////////////////
-
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", current: true },
