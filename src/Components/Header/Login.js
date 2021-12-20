@@ -1,4 +1,3 @@
-import "../../Styles/Header/Login.scss";
 import Button from "../SubComponents/Button";
 
 /* This example requires Tailwind CSS v2.0+ */
