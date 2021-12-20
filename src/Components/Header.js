@@ -17,16 +17,14 @@
 
 ////////////////
 
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Tournaments", href: "#", current: false },
+  { name: "Teams", href: "#", current: false },
 ];
 
 const classNames = (...classes) => {
@@ -55,12 +53,12 @@ const Header = () => {
                 <div className="flex items-center flex-shrink-0">
                   <img
                     className="block w-auto h-8 lg:hidden"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                    src="https://picsum.photos/200/300"
                     alt="Workflow"
                   />
                   <img
                     className="hidden w-auto h-8 lg:block"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                    src="https://picsum.photos/200/300"
                     alt="Workflow"
                   />
                 </div>
@@ -100,7 +98,7 @@ const Header = () => {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="w-8 h-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src="https://picsum.photos/200/300"
                         alt=""
                       />
                     </Menu.Button>
