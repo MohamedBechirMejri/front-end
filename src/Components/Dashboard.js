@@ -1,6 +1,7 @@
 // import Games from "./Home/Games";
 import Carousel from "./Dashboard/Carousel";
 import Games from "./Dashboard/Games";
+import Tournaments from "./Dashboard/Tournaments";
 
 const Dashboard = () => {
   return (
@@ -50,7 +51,7 @@ const Dashboard = () => {
           },
         ]}
       />
-      {/* Tournaments */}
+      <Tournaments />
     </div>
   );
 };
