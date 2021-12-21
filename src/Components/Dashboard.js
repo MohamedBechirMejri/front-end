@@ -1,11 +1,12 @@
 // import Games from "./Home/Games";
 import Carousel from "./Dashboard/Carousel";
+import Games from "./Dashboard/Games";
 
 const Dashboard = () => {
   return (
     <div className="h-screen dashboard">
       <Carousel />
-      {/* <Games
+      <Games
         Games={[
           {
             image:
@@ -48,7 +49,7 @@ const Dashboard = () => {
             title: "League of Legends",
           },
         ]}
-      /> */}
+      />
       {/* Tournaments */}
     </div>
   );
