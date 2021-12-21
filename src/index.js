@@ -1,9 +1,12 @@
+// eslint-disable-next-line no-undef
+require(`dotenv`).config();
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import App from "./App";
-import { BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
