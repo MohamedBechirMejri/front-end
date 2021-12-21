@@ -1,9 +1,10 @@
 // import Games from "./Home/Games";
+import Carousel from "./Dashboard/Carousel";
 
 const Dashboard = () => {
   return (
-    <div className="dashboard">
-      {/* <Slider /> */}
+    <div className="h-screen dashboard">
+      <Carousel />
       {/* <Games
         Games={[
           {
