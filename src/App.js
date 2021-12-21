@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 import Login from "./Components/Header/Login";
 import Dashboard from "./Components/Dashboard";
-import './App.css';
+import "./App.css";
 const App = () => {
   return (
     <div className=" App">
