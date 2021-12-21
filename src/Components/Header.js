@@ -18,7 +18,7 @@ const Header = () => {
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
-          <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="z-10 px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -74,7 +74,7 @@ const Header = () => {
                 </button>
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
+                <Menu as="div" className="relative z-20 ml-3">
                   <div>
                     <Menu.Button className="flex text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
@@ -141,8 +141,8 @@ const Header = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <Disclosure.Panel className=" sm:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 ">
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
