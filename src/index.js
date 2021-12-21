@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-undef
-
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
