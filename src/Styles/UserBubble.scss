@@ -4,6 +4,7 @@
   right: 1em;
   height: 5em;
   width: 5em;
+  border: 3px rgb(7, 167, 61) dotted;
   border-radius: 50%;
   background-size: cover;
   overflow: hidden;
@@ -11,7 +12,7 @@
   align-items: center;
   justify-content: center;
   transition: all 300ms;
-  opacity: 0.3;
+  opacity: 1;
   flex-direction: column;
 
   &:hover {
@@ -32,11 +33,12 @@
   }
   div {
     position: relative;
-    background-image: url(https://picsum.photos/200/300);
+    // background-image: url(https://picsum.photos/200/300);
     width: 100%;
     height: 100%;
-    background-size: cover;
+    background-size:100% 100%;
     background-repeat: no-repeat;
+    
 
     img {
       display: none;
@@ -75,6 +77,18 @@
       transition: all 300ms;
       &:hover {
         background: rgb(78, 78, 78);
+      }
+    }
+    .logout {
+      color: aliceblue;
+      text-decoration: none;
+      width: 100%;
+      text-align: center;
+      background:  rgb(34, 34, 34);
+      padding: 1em;
+      transition: all 300ms;
+      &:hover {
+        background: rgb(236, 2, 2);
       }
     }
   }
