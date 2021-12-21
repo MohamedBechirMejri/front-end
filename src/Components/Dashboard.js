@@ -2,10 +2,11 @@
 import Carousel from "./Dashboard/Carousel";
 import Games from "./Dashboard/Games";
 import Tournaments from "./Dashboard/Tournaments";
+import Footer from "./Footer";
 
 const Dashboard = () => {
   return (
-    <div className="h-screen dashboard">
+    <div className="relative h-screen">
       <Carousel />
       <Games
         Games={[
@@ -83,6 +84,7 @@ const Dashboard = () => {
           },
         ]}
       />
+      <Footer/>
     </div>
   );
 };
